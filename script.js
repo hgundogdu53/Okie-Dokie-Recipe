@@ -3,10 +3,10 @@
 const apiKey = 'aba4d87f9d45095cb05fec74c8192987';
 const appId = 'a3869b37';
 const searchUrl = 'https://api.edamam.com/search';
-const beverageSearchUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 const videoSearchUrl = 'https://www.googleapis.com/youtube/v3/search';
 const videoApiKey = 'AIzaSyCyodARBxXDbIXokWo_Z10Y7Ys3AWSE8IU';
 let result = [];
+let videoResult = [];
 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -14,12 +14,18 @@ function formatQueryParams(params) {
 }
 
 function displayResults() {
-    $('#results-list').empty();
+    $('.results-list-recipe').empty();
+    $('.results-list-video').empty();
     $('#results').removeClass('hidden');
 
     for (let i = 0; i < result.length; i++) {
         const rec = result[i];
-        $('#results-list').append(`<div id="js-recipes"><li><img src="${rec.image}"</img><br/>
+        $('.results-list-recipe').append(`<div class="js-recipes"><li><img src="${rec.image}"</img><br/>
+        <a target="_blank" href="${rec.shareAs}">${rec.label}</a></li></div>`);
+    };
+    for (let i = 0; i < videoResult.length; i++) {
+        const rec = videoResult[i];
+        $('.results-list-video').append(`<div class="js-recipes-video"><li><img src="${rec.image}"</img><br/>
         <a target="_blank" href="${rec.shareAs}">${rec.label}</a></li></div>`);
     };
 }
@@ -31,7 +37,7 @@ function addResult(responseJson) {
             result.push({
                 image: rec.recipe.image,
                 label: rec.recipe.label,
-                shareAs: rec.recipe.shareAs
+                shareAs: rec.recipe.shareAs,
             });
         };
     }
@@ -42,11 +48,13 @@ function addVideoResult(responseJson) {
         for (let i = 0; i < responseJson.items.length; i++) {
             const rec = responseJson.items[i];
             console.log(rec);
-            result.push({
+            videoResult.push({
                 image: rec.snippet.thumbnails.high.url,
                 label: rec.snippet.title,
                 shareAs: 'https://www.youtube.com/watch?v=' + rec.id.videoId
             });
+
+
         }
     }
 }
@@ -68,6 +76,7 @@ function getRecipeList(recipeList) {
     const url = searchUrl + '?' + queryString;
     console.log(url);
     result = [];
+    videoResult = [];
     fetch(url)
         .then(response => {
             if (response.ok) {

@@ -72,22 +72,59 @@ input:focus, input:hover {
 
 }
 
-#results-list #js-recipes{
-    display: inline-flex;
-    flex-direction: row; 
+#results-list  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#results-list .results-list-recipe {
+    flex:50%;
+    max-width: 50%;
     list-style: none;
-    color:navy;
+    color:red;
     padding-left: 2%;
-    padding-right: 2%;
     padding-top: 5%;
     font-family: 'Teko', sans-serif;
     text-align: center;
     font-size: 28px;
+}
 
+#results-list .results-list-video {
+    flex:50%;
+    max-width: 50%;
+    list-style: none;
+    color:red;
+    padding-left: 2%;
+    padding-top: 5%;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    font-size: 28px;
+}
+
+#results-list .results-list-recipe .js-recipes {
+    padding-left: 10%;
+    padding-top: 3%;
+}
+
+#results-list .results-list-video .js-recipes-video {
+    padding-right: 10%;
+    padding-top: 3%;
+    color: black;
 }
 
 
-#js-recipes li img {
+.js-recipes li img {
     border-radius: 50%;
     border: 5px solid orange;
+}
+
+
+.js-recipes-video li img {
+    width: 490px;
+    height: 370px;
+    border: 5px solid red;
+
 }
