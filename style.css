@@ -159,3 +159,191 @@ input:focus, input:hover {
     border: 5px solid red;
 
 }
+
+@media screen and (max-width:512px) {
+    #header h1 {
+        font-size: 90px;
+        text-align: center;
+    }
+    #js-form {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        font-family: 'Londrina Shadow', cursive;
+        padding: 15%;
+    
+    }
+    #js-search-recipes {
+        border: 2px solid orange;
+        border-radius: 25px;
+        width: 300px;
+        height: 30px;
+        color: orange;
+        font-size: 14px;
+        text-align: center;
+        font-family: 'Teko', sans-serif;
+    
+    }
+    #js-submit {
+        border: 2px solid orangered;
+        border-radius: 50px;
+        width: 40px;
+        height: 30px;
+        margin-left: 2%;
+        font-size: 16px;
+    }
+    #results {
+        font-size: 18px;
+    }
+    .logos {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logos li img {
+        width: 100px;
+        height: 80px;
+
+    }
+    #results-list .results-list-video {
+        flex:50%;
+        max-width: 50%;
+        list-style: none;
+        color:red;
+        margin-top: 0;
+        padding-left: 2%;
+        padding-top: 2%;
+        font-size: 16px;
+    }
+    #results-list .results-list-recipe {
+        flex:50%;
+        max-width: 50%;
+        list-style: none;
+        color:red;
+        margin-top: 0;
+        padding-left: 2%;
+        padding-top: 2%;
+        font-size: 16px;
+    }
+    
+    #results-list .results-list-recipe .js-recipes {
+        padding-left: 0;
+        padding-top: 2%;
+    }
+    #results-list .results-list-video .js-recipes-video {
+        padding-right: 5%;
+        padding-top: 2%;
+        color: black;
+    }
+    
+    
+    .js-recipes li img {
+        border-radius: 50%;
+        border: 2px solid orange;
+    }
+    
+    .js-recipes-video li img {
+        border: 2px solid red;
+        border-radius: 50%;
+
+    }
+    .js-recipes-video li img, .js-recipes li img {
+        width: 150px;
+        height: 130px;
+    
+    }
+}
+
+@media screen and (min-width: 513px) and (max-width: 1096px) {
+    #header h1 {
+        font-size: 100px;
+        text-align: center;
+    }
+    #js-form {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        font-family: 'Londrina Shadow', cursive;
+        padding: 20%;
+    
+    }
+    #js-search-recipes {
+        border: 3px solid orange;
+        border-radius: 25px;
+        width: 700px;
+        height: 50px;
+        color: orange;
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Teko', sans-serif;
+    
+    }
+    #js-submit {
+        border: 3px solid orangered;
+        border-radius: 50px;
+        width: 70px;
+        height: 50px;
+        margin-left: 2%;
+        font-size: 18px;
+    }
+    #results {
+        font-size: 18px;
+    }
+    .logos {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logos li img {
+        width: 160px;
+        height: 80px;
+        text-align: center;
+
+    }
+    #results-list .results-list-video {
+        flex:50%;
+        max-width: 50%;
+        list-style: none;
+        color:red;
+        margin-top: 0;
+        padding-left: 2%;
+        padding-top: 2%;
+        font-size: 20px;
+    }
+    #results-list .results-list-recipe {
+        flex:50%;
+        max-width: 50%;
+        list-style: none;
+        color:red;
+        margin-top: 0;
+        padding-left: 2%;
+        padding-top: 2%;
+        font-size: 20px;
+    }
+    
+    #results-list .results-list-recipe .js-recipes {
+        padding-left: 2%;
+        padding-top: 2%;
+    }
+    #results-list .results-list-video .js-recipes-video {
+        padding-right: 5%;
+        padding-top: 2%;
+        color: black;
+    }
+    
+    
+    .js-recipes li img {
+        border-radius: 50%;
+        border: 2px solid orange;
+    }
+    
+    .js-recipes-video li img {
+        border: 2px solid red;
+        border-radius: 50%;
+
+    }
+    .js-recipes-video li img, .js-recipes li img {
+        width: 200px;
+        height: 150px;
+    
+    }
+}
+}
